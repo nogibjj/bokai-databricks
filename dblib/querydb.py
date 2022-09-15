@@ -1,6 +1,7 @@
 from databricks import sql
 import os
 
+
 def querydb(query="SELECT * FROM default.diamonds LIMIT 2"):
     with sql.connect(
         server_hostname=os.getenv("DATABRICKS_SERVER_HOSTNAME"),
@@ -44,8 +45,10 @@ def find_max_price(color):
 
         with connection.cursor() as cursor:
             cursor.execute(
-                "SELECT distinct min(price) over (partition by color) as max_price FROM diamonds WHERE color='" + str(color) + "'"
-                )
+                "SELECT distinct min(price) over (partition by color) as max_price FROM diamonds WHERE color='"
+                + str(color)
+                + "'"
+            )
             result = cursor.fetchall()
 
         for row in result:
