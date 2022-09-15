@@ -45,7 +45,7 @@ def find_max_price(color):
 
         with connection.cursor() as cursor:
             cursor.execute(
-                "SELECT distinct min(price) over (partition by color) as max_price FROM diamonds WHERE color='"
+                "SELECT distinct max(price) over (partition by color) as max_price FROM diamonds WHERE color='"
                 + str(color)
                 + "'"
             )
