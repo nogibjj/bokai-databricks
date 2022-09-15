@@ -6,6 +6,8 @@ __Author: Bokai Zhou__
 
 This is the first individual project to talk to Databricks using a microservice(flask) and command-line tool(click).
 
+Demo link: [Youtube](https://youtu.be/iYT4a8ucho0)
+
 ## Test CLI
 ```linux
 databricks clusters list --output JSON | jq
