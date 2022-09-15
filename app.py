@@ -15,9 +15,9 @@ def demo():
     return {"result": result}
 
 
-@app.route("/<query>")
-def query(query):
-    result = querydb(query)
+@app.route("/<sql_query>")
+def query(sql_query):
+    result = querydb(sql_query)
     return {"result": result}
 
 
